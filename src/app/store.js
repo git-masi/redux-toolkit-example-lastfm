@@ -1,8 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { artistReducer } from '../features/addArtist/artistSlice';
+import { lastFmReducer } from '../features/addLastFmData/lastFmSlice';
+
+const reducer = {
+  artists: artistReducer,
+  lastFm: lastFmReducer,
+}
 
 export default configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
+  reducer,
+  devTools: true,
 });
